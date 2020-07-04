@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+
+  <style> 
+
+
+  /* Header/Logo Title */
+div.header {
+  padding: 0.5px;
+ margin-left: 200px;
+ margin-right: 200px;
+ margin-top: 60px;
+ margin-bottom: 20px;
+ border: none;
+  border-radius: 80px;
+  text-align: center;
+  background-color:white ;
+  color: #17252A;
+  font-size: 40px;
+  font-family: Arial;
+}
+
+body {
+  background-color:#3AAFA9 ;
+}
+
+
+    input[type=text] {
+
+      width: 40%;
+    
+  padding: 6px 6px;
+  margin: 8px 350px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 6px;
+  background-color:white ;
+  color:#17252A;
+  font-size: 20px;
+    }
+
+
+
+label.l1, label.l2, label.l3, label.l4, label.l5{
+  margin: 8px 350px;
+color: #17252A;
+font-family: Arial;
+font-size: 22px;
+font-weight: bold;
+}
+
+button.btn{
+  background-color:#17252A;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 4px 20px;
+  text-decoration: none;
+  margin: 8px 350px;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-size: 16px;
+  opacity: 0.8; /* Firefox */
+  
+}
+
+p.p1{
+
+  margin: 8px 350px;
+color:white;
+font-family: Arial;
+font-size: 22px;
+}
+
+
+   
+
+    </style>
+
+  <meta charset="UTF-8">
+  <title>Cricket_Score_Predictor</title>
+
+  
+</head>
+
+<body>
+
+  <div class="header" >
+    <h1><b>SCORE PREDICTOR</b></h1>
+    
+  </div>
+  
+ <div class="login">
+	
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <br> <br>
+      <label class="l1">Batting Team Rank</label> 
+      <input type="text" name="Batting_Team" placeholder="Enter the current ICC ODI Rank  e.g: 1"  required="required" /> <br><br>
+
+      <label class="l2">Bowling Team Rank </label> 
+        <input type="text" name="Bowling_Team" placeholder="Enter the current ICC ODI Rank  e.g: 2"   required="required" /> <br> <br>
+
+        <label class="l3">Overs Bowled</label>  
+        <input type="text" name="Overs Bowled" placeholder="Enter Overs Bowled  e.g: 35"   required="required" /> <br> <br>
+
+        <label class="l4">Runs Scored</label>  
+        <input type="text" name="Runs Scored" placeholder="Enter Runs Scored  e.g: 180"  required="required" /> <br> <br>
+
+        <label class="l5">Wickets Fallen</label> 
+		<input type="text" name="Wickets Fallen" placeholder="Enter Wickets Fallen  e.g: 3"  required="required" /> <br> <br>
+        
+        <button type="submit" class="btn">Predict</button>
+    </form>
+
+   <br>
+   <br>
+    <p class="p1"> {{ prediction_text }} </p>
+
+ </div>
+
+
+</body>
+</html>
