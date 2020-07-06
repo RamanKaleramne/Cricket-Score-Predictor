@@ -1,7 +1,7 @@
 # Cricket Score Predictor : Project Overview
 * "Cricket Score Predictor" is a web application that predicts the 1st inning's score (MAE~25 runs) of an ODI cricket match.
-* Collected raw data that contained ball by ball informations of around 1400 ODI matches.
-* Cleaned and prepared the data into suitable format.
+* Collected raw data that contained ball by ball information of around 1400 ODI matches.
+* Cleaned and prepared the data into suitable format by combining all csv files and removing matches that had No Result.
 * Generated some more features based on the domain knowledge.
 * Applied data pre-processing to encode categorical features.
 * Optimized Linear,Random forest and XGBoost regressors using GridsearchCV to reach the best model.
